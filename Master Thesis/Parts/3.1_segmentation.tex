@@ -2,7 +2,8 @@
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
 
 
-\textbf{Goal}:\\
+\textbf{Goal}:
+
 To segment the detected surface of wooden beams, especially give the difference between the main surface and the others; (ideal output like Figure~\ref{fig:mock1})
 
 \hspace*{\fill}
@@ -22,10 +23,22 @@ To segment the detected surface of wooden beams, especially give the difference 
 \label{fig:mock1}
 \end{figure}  
 
-\textbf{Data set}:\\
-The data set for this step will be captured through different wooden constructions which the main surface (target surface) and the rest surfaces will be masked. Currently 
+\textbf{Data set}:
+
+The data set for this step will be captured through different wooden constructions which the main surface (target surface) and the rest surfaces will be masked. Currently, there are more than 800 captured images for segmentation of wooden beams to be annotated.
 
 \hspace*{\fill}
+
+\newpage
+\textbf{Potential methods}:
+
+Several models will be considered to achieve a valuable performance for the segmentation. Stat-of-art models like Segment Anything~\citep{kirillov2023segany}(Test in Figure~\ref{fig:sam_test}), Detectron2~\citep{wu2019detectron2} or Mask R-CNN~\citep{matterport_maskrcnn_2017} are expected to support this step. However, all models need to be fine-tuned using the mentioned datasets to hopefully segment the main target wooden beams and properly be modified to fit the final workflow.
+
+\hspace*{\fill}
+
+\textbf{Output}:
+
+Output will be the segmented single image and position of segmented target area.
 
 \begin{figure}[ht]
   \centering
@@ -41,14 +54,6 @@ The data set for this step will be captured through different wooden constructio
   \caption{Examples of segmentation on wooden beams using SAM (segment anything)}
 \label{fig:sam_test}
 \end{figure}
-
-\textbf{Potential methods}:\\
-Several models will be considered to achieve a valuable performance for the segmentation. Stat-of-art models like Segment Anything(\cite{kirillov2023segany})(Test in Figure~\ref{fig:sam_test}), Detectron2(\cite{wu2019detectron2}) or Mask R-CNN(\cite{matterport_maskrcnn_2017}) are expected to support this step. However, all models need to be fine-tuned using the mentioned datasets to hopefully segment the main target wooden beams and properly be modified to fit the final workflow.
-
-\hspace*{\fill}
-
-\textbf{Output}:\\
-Output will be the segmented single image and position of segmented target area.
 
 \hspace*{\fill}
 
