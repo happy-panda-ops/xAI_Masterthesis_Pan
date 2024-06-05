@@ -1,0 +1,4 @@
+.DS_Store
+test
+# Project_process/P2_Experiments/202406_Detectron2/detectron2/
+*.pth

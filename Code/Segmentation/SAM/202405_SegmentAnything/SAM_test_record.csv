@@ -1,0 +1,4 @@
+Testname, Dataset, train set, Batchsize, Iteration, clearml
+test_1_0602, v1, 1113, 2, 1000, https://app.clear.ml/projects/74b6e0a691274f3ab5c4d4c07b606bd2/experiments/9c5e7edb7db54f7591f3eb9d1cef108b/output/execution
+test_2_0602, v1, 1113, 2, 5000, https://app.clear.ml/projects/74b6e0a691274f3ab5c4d4c07b606bd2/experiments/a2569e6d7c9044808e44d44c70bc2651/output/execution
+test_3_0602, v1, 1113, 16, 700, https://app.clear.ml/projects/74b6e0a691274f3ab5c4d4c07b606bd2/experiments/7f5b28d012974897aecc04dd34a96686/output/execution

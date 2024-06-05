@@ -1,0 +1,34 @@
+# project
+project: Uni-Wood
+name: Schweinfurt-Yolo-Test-1
+exist_ok: False
+
+# dataset
+data_mac: /Volumes/Extreme SSD/Datasets/2_Schweinfurt/S3_Datasets/Schweinfurt.v2-with-split-75-15-10.yolov9/data.yaml
+data_win: "B:\01_Study\Uni-Bamberg\Work\Holzprojects\Datasets\2_Schweinfurt\S3_Datasets\Schweinfurt.v2-with-split-75-15-10.yolov9\data.yaml"
+test_data: /path/to/test_data.txt
+imgsz: 640
+
+# model
+model: yolov8m.pt
+task: detect
+mode: train
+device_mac: mps
+device_win: 0
+
+# parameters
+epochs: 20
+batch: 10
+lr0: 0.001
+cos_lr: True
+weight_decay: 0.0005
+dropout: 0.0
+optimizer: Adam
+momentum: 0.9
+seed: 42
+
+# output
+save: False
+save_period: -1
+plots: True
+test_output: /path/to/test_output
