@@ -1,7 +1,10 @@
 Testname, Dataset, train set, Batchsize, Iteration, total epoch, lr, lr decay, clearml
-, v1, Scale 1024x1024, , , , , ,
+, v1, Scale 1024x1024, , , , , , ，
 test_1_0602, v1, 1113, 2, 1000, 1.797, 0.00025, defaut, https://app.clear.ml/projects/74b6e0a691274f3ab5c4d4c07b606bd2/experiments/9c5e7edb7db54f7591f3eb9d1cef108b/output/execution
 test_2_0602, v1, 1113, 2, 5000, 8.985, 0.00025, defaut, https://app.clear.ml/projects/74b6e0a691274f3ab5c4d4c07b606bd2/experiments/a2569e6d7c9044808e44d44c70bc2651/output/execution
 test_3_0602, v1, 1113, 16, 700, 10.063, 0.00025, defaut, https://app.clear.ml/projects/74b6e0a691274f3ab5c4d4c07b606bd2/experiments/7f5b28d012974897aecc04dd34a96686/output/execution
 test_4_0605, v1, 1113, 16, 700, 10.063, 0.00025, POLY_POWER = 1, https://app.clear.ml/projects/74b6e0a691274f3ab5c4d4c07b606bd2/experiments/979662f852ee457f887802db44b2f678/output/execution
-test_4_0605, v1, 1113, 16, 1400, 20.126, 0.00025, POLY_POWER = 1, https://app.clear.ml/projects/74b6e0a691274f3ab5c4d4c07b606bd2/experiments/979662f852ee457f887802db44b2f678/output/execution
+test_5_0605, v1, 1113, 16, 1400, 20.126, 0.00025, POLY_POWER = 1, https://app.clear.ml/projects/74b6e0a691274f3ab5c4d4c07b606bd2/experiments/979662f852ee457f887802db44b2f678/output/execution
+test_6_0605, v1, 1113, 16, 2800, 40.252, 0.00025, POLY_POWER = 1, https://app.clear.ml/projects/74b6e0a691274f3ab5c4d4c07b606bd2/experiments/5e32505d013a468ab23fac1e37983b1d/output/execution
+test_7_0605, v1, 1113, 16, 4174, 60, 0.00025, POLY_POWER = 1, https://app.clear.ml/projects/74b6e0a691274f3ab5c4d4c07b606bd2/experiments/e9bcdbe9e4844f858138f622c5e00d11/output/execution
+
