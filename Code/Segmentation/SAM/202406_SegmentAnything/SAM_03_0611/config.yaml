@@ -4,4 +4,4 @@ learning_rate: 0.0001
 num_classes: 2
 num_epochs: 1
 project_name: SAM
-task_name: SAM_02_0609
+task_name: SAM_03_0611
