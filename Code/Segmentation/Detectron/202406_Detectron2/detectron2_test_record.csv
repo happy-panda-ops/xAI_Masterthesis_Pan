@@ -1,6 +1,6 @@
 Testname, Modell, Dataset, train set, Batchsize, Iteration, total epoch, lr, lr decay, clearml
-, R50-FPN 3x with Mask R-cnn, v1, Scale 1024x1024, , , , , , 
-test_1_0602, R50-FPN 3x with Mask R-cnn, v1, 1113, 2, 1000, 1.797, 0.00025, defaut, https://app.clear.ml/projects/74b6e0a691274f3ab5c4d4c07b606bd2/experiments/9c5e7edb7db54f7591f3eb9d1cef108b/output/execution
+, R50-FPN 3x with Mask R-cnn, v1, Scale 1024x1024, , , , , ,
+test_1_0602, R50-FPN 3x with Mask R-cnn, v1, 1113, 2, 1000, 1.797, 0.00025, defaut, https://app.clear.ml/projects/74b6e0a691274f3ab5c4d4c07b606bd2/experiments/9c5e7edb7db54f7591f3eb9d1cef108b/output/
 test_2_0602, -, v1, 1113, 2, 5000, 8.985, 0.00025, defaut, https://app.clear.ml/projects/74b6e0a691274f3ab5c4d4c07b606bd2/experiments/a2569e6d7c9044808e44d44c70bc2651/output/execution
 test_3_0602, -, v1, 1113, 16, 700, 10.063, 0.00025, defaut, https://app.clear.ml/projects/74b6e0a691274f3ab5c4d4c07b606bd2/experiments/7f5b28d012974897aecc04dd34a96686/output/execution
 test_4_0605, -, v1, 1113, 16, 700, 10.063, 0.00025, POLY_POWER = 1, https://app.clear.ml/projects/74b6e0a691274f3ab5c4d4c07b606bd2/experiments/979662f852ee457f887802db44b2f678/output/execution
@@ -10,4 +10,3 @@ test_7_0605, -, v1, 1113, 16, 4174, 60, 0.00025, POLY_POWER = 1, https://app.cle
 test_8_0605, -, v1, 1113, 16, 5565, 80, 0.00025, POLY_POWER = 1, https://app.clear.ml/projects/74b6e0a691274f3ab5c4d4c07b606bd2/experiments/d4d46cdfffe0436187dc63d538e99b36/output/execution
 test_9_0606, -, v1, 1113, 16, 6957, 100, 0.00025, POLY_POWER = 1, https://app.clear.ml/projects/74b6e0a691274f3ab5c4d4c07b606bd2/experiments/d4d46cdfffe0436187dc63d538e99b36/output/execution
 test_10_0610, -, v1, 1113, 16, 8438, 120, 0.00025, POLY_POWER = 1, https://app.clear.ml/projects/74b6e0a691274f3ab5c4d4c07b606bd2/experiments/d4d46cdfffe0436187dc63d538e99b36/output/execution
-
