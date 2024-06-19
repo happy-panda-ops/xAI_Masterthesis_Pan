@@ -17,3 +17,6 @@ r101_test_4_0617_server,mask_rcnn_R_101_FPN_3x,v1,1113,16,8438,123,0.00025,POLY_
 r101_test_4_0617_server,mask_rcnn_R_101_FPN_3x,v1,1113,16,6957,101,0.00025,POLY_POWER = 1,none
 r101_test_5_0617_server,mask_rcnn_R_101_FPN_3x,v1,1113,16,13913,202,0.00025,POLY_POWER = 1,none
 r101_test_6_0618_server,mask_rcnn_R_101_FPN_3x,v1,1113,16,20869,303,0.00025,POLY_POWER = 1,none
+r50_400_test_1_0618_server,mask_rcnn_R_50_FPN_400ep_LSJ,v1,1113,16,10,1,0.00025,1,none
+r50_400_test_1_0618_server,mask_rcnn_R_50_FPN_400ep_LSJ,v1,1113,16,10,1,0.00025,1,none
+r50_400_test_1_0618_server,mask_rcnn_R_50_FPN_400ep_LSJ,v1,1113,16,10,1,0.00025,1,none
