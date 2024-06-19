@@ -1,0 +1,5 @@
+CUDA runout 
+
+fuser -v /dev/nvidia*   
+
+kill -9 PID
