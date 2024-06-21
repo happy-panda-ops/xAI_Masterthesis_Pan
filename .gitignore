@@ -4,3 +4,4 @@ test
 *.pth
 *segment-anything
 *detectron2
+detectron2
