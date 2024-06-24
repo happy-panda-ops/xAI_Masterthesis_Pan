@@ -1,2 +1,5 @@
-Testname, Dataset, train set, Batchsize, Iteration, total epoch, lr, clearml
-, v1, Scale 1024x1024, , , , , ,
+Testname, Dataset, Model, train set, Batchsize,  total epoch, lr, clearml
+YOLO-seg-test-1,v2,yolov8m-seg.pt,1113,16,50,0.001,none
+YOLO-seg-test-2,v2,yolov8m-seg.pt,1113,16,100,0.001,none
+YOLO-seg-test-3,v2,yolov8m-seg.pt,1113,16,150,0.001,none
+YOLO-seg-test-4,v2,yolov8m-seg.pt,1113,16,200,0.001,none

@@ -1,11 +1,11 @@
 # project
 project: YOLO-v8-seg
-name: YOLO-seg-test-1
+task_name: YOLO-seg-test-1
 exist_ok: False
 
 # dataset
 data_mac: /Users/holmes/Documents/UNI-Bamberg/Arbeiten/Datensatz/Selfmade/3_iphone_domini_seg/YOLO/Dominik-seg.v2_yolo.yolov8/data.yaml
-data_win: "B:/01_Study/Uni-Bamberg/Work/Holzprojects/Datasets/2_Schweinfurt/S3_Datasets/Schweinfurt.v6-with-augmentation.yolov9/data.yaml"
+data_win: /mnt/data/backup_pan/Dataset/Seg-dominik-iphone/YOLO/Dominik-seg.v2_yolo.yolov8/data.yaml
 test_data: /path/to/test_data.txt
 imgsz: 640
 
@@ -17,11 +17,11 @@ device_mac: mps
 device_win: 0
 
 # parameters
-epochs: 1
+epochs: 50
 batch: 16
 lr0: 0.001
 cos_lr: True
-weight_decay: 0.0005
+weight_decay: 0
 dropout: 0.0
 optimizer: Adam
 momentum: 0.9
