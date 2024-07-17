@@ -1,11 +1,11 @@
 # project
 project: Uni-Wood
-name: Mixed_YOLO_all_test_1
+name: Mixed_YOLO_d1+d2_test_1
 exist_ok: False
 
 # dataset
-data_server: /mnt/data/backup_pan/Dataset/Mixed_datasets/Det-dominik_v_1-v2-sf_v1.v2i.yolov8
-data_yaml: /mnt/data/backup_pan/Dataset/Mixed_datasets/Det-dominik_v_1-v2-sf_v1.v2i.yolov8/data.yaml
+data_server: /mnt/data/backup_pan/Dataset/Mixed_datasets/Det-dominik-v1-v2.v3i.yolov8
+data_yaml: /mnt/data/backup_pan/Dataset/Mixed_datasets/Det-dominik-v1-v2.v3i.yolov8/data.yaml
 test_data: /path/to/test_data.txt
 imgsz: 640
 
@@ -17,7 +17,7 @@ device_mac: mps
 device_win: 0
 
 # parameters
-epochs: 1
+epochs: 200
 batch: 16
 lr0: 0.001
 cos_lr: True
