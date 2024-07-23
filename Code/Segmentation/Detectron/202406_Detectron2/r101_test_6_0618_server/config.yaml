@@ -21,9 +21,9 @@ dictitems:
       PROPOSAL_FILES_TEST: !!python/tuple []
       PROPOSAL_FILES_TRAIN: !!python/tuple []
       TEST: !!python/tuple
-      - wood_val
+        - wood_val
       TRAIN: !!python/tuple
-      - wood_train
+        - wood_train
     state:
       __deprecated_keys__: !!set {}
       __immutable__: false
@@ -43,8 +43,8 @@ dictitems:
         dictitems:
           ENABLED: false
           SIZE:
-          - 0.9
-          - 0.9
+            - 0.9
+            - 0.9
           TYPE: relative_range
         state:
           __deprecated_keys__: !!set {}
@@ -57,12 +57,12 @@ dictitems:
       MAX_SIZE_TRAIN: 1333
       MIN_SIZE_TEST: 800
       MIN_SIZE_TRAIN: !!python/tuple
-      - 640
-      - 672
-      - 704
-      - 736
-      - 768
-      - 800
+        - 640
+        - 672
+        - 704
+        - 736
+        - 768
+        - 800
       MIN_SIZE_TRAIN_SAMPLING: choice
       RANDOM_FLIP: horizontal
     state:
@@ -75,21 +75,21 @@ dictitems:
       ANCHOR_GENERATOR: !!python/object/new:detectron2.config.config.CfgNode
         dictitems:
           ANGLES:
-          - - -90
-            - 0
-            - 90
+            - - -90
+              - 0
+              - 90
           ASPECT_RATIOS:
-          - - 0.5
-            - 1.0
-            - 2.0
+            - - 0.5
+              - 1.0
+              - 2.0
           NAME: DefaultAnchorGenerator
           OFFSET: 0.0
           SIZES:
-          - - 32
-          - - 64
-          - - 128
-          - - 256
-          - - 512
+            - - 32
+            - - 64
+            - - 128
+            - - 256
+            - - 512
         state:
           __deprecated_keys__: !!set {}
           __immutable__: false
@@ -109,11 +109,11 @@ dictitems:
         dictitems:
           FUSE_TYPE: sum
           IN_FEATURES:
-          - res2
-          - res3
-          - res4
-          - res5
-          NORM: ''
+            - res2
+            - res3
+            - res4
+            - res5
+          NORM: ""
           OUT_CHANNELS: 256
         state:
           __deprecated_keys__: !!set {}
@@ -144,13 +144,13 @@ dictitems:
           __new_allowed__: false
           __renamed_keys__: {}
       PIXEL_MEAN:
-      - 103.53
-      - 116.28
-      - 123.675
+        - 103.53
+        - 116.28
+        - 123.675
       PIXEL_STD:
-      - 1.0
-      - 1.0
-      - 1.0
+        - 1.0
+        - 1.0
+        - 1.0
       PROPOSAL_GENERATOR: !!python/object/new:detectron2.config.config.CfgNode
         dictitems:
           MIN_SIZE: 0
@@ -165,18 +165,18 @@ dictitems:
           DEFORM_MODULATED: false
           DEFORM_NUM_GROUPS: 1
           DEFORM_ON_PER_STAGE:
-          - false
-          - false
-          - false
-          - false
+            - false
+            - false
+            - false
+            - false
           DEPTH: 101
           NORM: FrozenBN
           NUM_GROUPS: 1
           OUT_FEATURES:
-          - res2
-          - res3
-          - res4
-          - res5
+            - res2
+            - res3
+            - res4
+            - res5
           RES2_OUT_CHANNELS: 256
           RES5_DILATION: 1
           STEM_OUT_CHANNELS: 64
@@ -190,28 +190,28 @@ dictitems:
       RETINANET: !!python/object/new:detectron2.config.config.CfgNode
         dictitems:
           BBOX_REG_LOSS_TYPE: smooth_l1
-          BBOX_REG_WEIGHTS: &id002 !!python/tuple
-          - 1.0
-          - 1.0
-          - 1.0
-          - 1.0
+          BBOX_REG_WEIGHTS: !!python/tuple &id002
+            - 1.0
+            - 1.0
+            - 1.0
+            - 1.0
           FOCAL_LOSS_ALPHA: 0.25
           FOCAL_LOSS_GAMMA: 2.0
           IN_FEATURES:
-          - p3
-          - p4
-          - p5
-          - p6
-          - p7
+            - p3
+            - p4
+            - p5
+            - p6
+            - p7
           IOU_LABELS:
-          - 0
-          - -1
-          - 1
+            - 0
+            - -1
+            - 1
           IOU_THRESHOLDS:
-          - 0.4
-          - 0.5
+            - 0.4
+            - 0.5
           NMS_THRESH_TEST: 0.5
-          NORM: ''
+          NORM: ""
           NUM_CLASSES: 80
           NUM_CONVS: 4
           PRIOR_PROB: 0.01
@@ -226,25 +226,25 @@ dictitems:
       ROI_BOX_CASCADE_HEAD: !!python/object/new:detectron2.config.config.CfgNode
         dictitems:
           BBOX_REG_WEIGHTS: !!python/tuple
-          - &id001 !!python/tuple
-            - 10.0
-            - 10.0
-            - 5.0
-            - 5.0
-          - !!python/tuple
-            - 20.0
-            - 20.0
-            - 10.0
-            - 10.0
-          - !!python/tuple
-            - 30.0
-            - 30.0
-            - 15.0
-            - 15.0
+            - !!python/tuple &id001
+              - 10.0
+              - 10.0
+              - 5.0
+              - 5.0
+            - !!python/tuple
+              - 20.0
+              - 20.0
+              - 10.0
+              - 10.0
+            - !!python/tuple
+              - 30.0
+              - 30.0
+              - 15.0
+              - 15.0
           IOUS: !!python/tuple
-          - 0.5
-          - 0.6
-          - 0.7
+            - 0.5
+            - 0.6
+            - 0.7
         state:
           __deprecated_keys__: !!set {}
           __immutable__: false
@@ -261,7 +261,7 @@ dictitems:
           FED_LOSS_FREQ_WEIGHT_POWER: 0.5
           FED_LOSS_NUM_CLASSES: 50
           NAME: FastRCNNConvFCHead
-          NORM: ''
+          NORM: ""
           NUM_CONV: 0
           NUM_FC: 2
           POOLER_RESOLUTION: 7
@@ -280,15 +280,15 @@ dictitems:
         dictitems:
           BATCH_SIZE_PER_IMAGE: 512
           IN_FEATURES:
-          - p2
-          - p3
-          - p4
-          - p5
+            - p2
+            - p3
+            - p4
+            - p5
           IOU_LABELS:
-          - 0
-          - 1
+            - 0
+            - 1
           IOU_THRESHOLDS:
-          - 0.5
+            - 0.5
           NAME: StandardROIHeads
           NMS_THRESH_TEST: 0.5
           NUM_CLASSES: 3
@@ -303,14 +303,14 @@ dictitems:
       ROI_KEYPOINT_HEAD: !!python/object/new:detectron2.config.config.CfgNode
         dictitems:
           CONV_DIMS: !!python/tuple
-          - 512
-          - 512
-          - 512
-          - 512
-          - 512
-          - 512
-          - 512
-          - 512
+            - 512
+            - 512
+            - 512
+            - 512
+            - 512
+            - 512
+            - 512
+            - 512
           LOSS_WEIGHT: 1.0
           MIN_KEYPOINTS_PER_IMAGE: 1
           NAME: KRCNNConvDeconvUpsampleHead
@@ -329,7 +329,7 @@ dictitems:
           CLS_AGNOSTIC_MASK: false
           CONV_DIM: 256
           NAME: MaskRCNNConvUpsampleHead
-          NORM: ''
+          NORM: ""
           NUM_CONV: 4
           POOLER_RESOLUTION: 14
           POOLER_SAMPLING_RATIO: 0
@@ -347,21 +347,21 @@ dictitems:
           BBOX_REG_WEIGHTS: *id002
           BOUNDARY_THRESH: -1
           CONV_DIMS:
-          - -1
+            - -1
           HEAD_NAME: StandardRPNHead
           IN_FEATURES:
-          - p2
-          - p3
-          - p4
-          - p5
-          - p6
+            - p2
+            - p3
+            - p4
+            - p5
+            - p6
           IOU_LABELS:
-          - 0
-          - -1
-          - 1
+            - 0
+            - -1
+            - 1
           IOU_THRESHOLDS:
-          - 0.3
-          - 0.7
+            - 0.3
+            - 0.7
           LOSS_WEIGHT: 1.0
           NMS_THRESH: 0.7
           POSITIVE_FRACTION: 0.5
@@ -381,10 +381,10 @@ dictitems:
           CONVS_DIM: 128
           IGNORE_VALUE: 255
           IN_FEATURES:
-          - p2
-          - p3
-          - p4
-          - p5
+            - p2
+            - p3
+            - p4
+            - p5
           LOSS_WEIGHT: 1.0
           NAME: SemSegFPNHead
           NORM: GN
@@ -434,7 +434,6 @@ dictitems:
       MOMENTUM: 0.9
       NESTEROV: false
       NUM_DECAYS: 3
-      POLY_POWER: 1
       REFERENCE_WORLD_SIZE: 0
       RESCALE_INTERVAL: false
       STEPS: []
@@ -457,15 +456,15 @@ dictitems:
           FLIP: true
           MAX_SIZE: 4000
           MIN_SIZES: !!python/tuple
-          - 400
-          - 500
-          - 600
-          - 700
-          - 800
-          - 900
-          - 1000
-          - 1100
-          - 1200
+            - 400
+            - 500
+            - 600
+            - 700
+            - 800
+            - 900
+            - 1000
+            - 1100
+            - 1200
         state:
           __deprecated_keys__: !!set {}
           __immutable__: false
