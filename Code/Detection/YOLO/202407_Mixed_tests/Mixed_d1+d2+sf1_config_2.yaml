@@ -1,0 +1,34 @@
+# project
+project: Uni-Wood
+name: Mixed_YOLO_d1+d2+s1_test_2
+exist_ok: False
+
+# dataset
+data_server: /mnt/data/backup_pan/Dataset/Detection/Mixed_datasets/Det-dominik_v1-v2-sf_v1.v2i.yolov8
+data_yaml: /mnt/data/backup_pan/Dataset/Detection/Mixed_datasets/Det-dominik_v1-v2-sf_v1.v2i.yolov8/data.yaml
+test_data: /path/to/test_data.txt
+imgsz: 640
+
+# model
+model: yolov8m.yaml
+task: detect
+mode: train
+device_mac: mps
+device_win: 0
+
+# parameters
+epochs: 300
+batch: 16
+lr0: 0.001
+cos_lr: True
+weight_decay: 0.0005
+dropout: 0.0
+optimizer: Adam
+momentum: 0.9
+seed: 42
+
+# output
+save: False
+save_period: -1
+plots: True
+test_output: /path/to/test_output
