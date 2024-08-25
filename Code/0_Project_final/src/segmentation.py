@@ -25,4 +25,13 @@ class ObjectSegmentation:
         self.cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.5  # set threshold for this model
         self.cfg.MODEL.WEIGHTS = model_zoo.get_checkpoint_url(model_name)
         self.predictor = DefaultPredictor(self.cfg)
-
+    
+    def get_prediction_from_path(self, path):
+        img = cv2.imread(path)
+        outputs = self.predictor(img)
+        return outputs
+    
+    def main(self, path):
+        pass
+    
+# TODO: Test all function
