@@ -31,16 +31,16 @@
 <br />
 <div align="center">
   <a href="https://github.com/happy-panda-ops/xAI_Masterthesis_Pan">
-    <img src="images/Otto-Friedrich-University_Bamberg_logo.png" alt="Logo" width="100" height="100" style="vertical-align: bottom;">
+    <img src="images/Otto-Friedrich-University_Bamberg_logo.png" alt="Logo" width="80" height="80" style="vertical-align: bottom;">
   </a>
   <a href="https://github.com/happy-panda-ops/xAI_Masterthesis_Pan">
-    <img src="images/xaiLogo.png" alt="Logo" width="100" height="80" style="vertical-align: bottom;">
+    <img src="images/xaiLogo.png" alt="Logo" width="140" height="80" style="vertical-align: bottom;">
   </a>
   <a href="https://github.com/happy-panda-ops/xAI_Masterthesis_Pan">
-    <img src="images/kdwt.png" alt="Logo" width="120" height="80" style="vertical-align: bottom;">
+    <img src="images/kdwt.png" alt="Logo" width="120" height="70" style="vertical-align: bottom;">
   </a>
   <a href="https://github.com/happy-panda-ops/xAI_Masterthesis_Pan">
-    <img src="images/ddt.png" alt="Logo" width="150" height="80" style="vertical-align: bottom;">
+    <img src="images/ddt.png" alt="Logo" width="160" height="80" style="vertical-align: bottom;">
   </a>
   </a>
 
