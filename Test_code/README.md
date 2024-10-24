@@ -1,6 +1,7 @@
-xAI Masterthesis
+<h1>xAI Masterthesis</h1>
 
-Introduction
+<h2>Introduction</h2>
+
 Welcome to the xAI Masterthesis project repository. This project explores the applications of eXplainable AI (xAI) in computer vision, with a focus on the use of YOLOv8 and Detectron2 models for object detection tasks. The study evaluates these models across various scenarios, providing insights into their performance and interpretability.
 
 The primary goals of this project include:
