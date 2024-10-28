@@ -49,7 +49,7 @@ from historic timber structure
 imaging</h3>
 
   <p align="center">
-    This git repository contains the codes, training results and test code for Junquan Pan's master thesis at Chair xAI of the University of Bamberg.
+    This git repository contains the codes, training results and test code for Junquan Pan's master thesis at the Chair xAI of the University of Bamberg.
     <br />
     <a href="https://github.com/happy-panda-ops/xAI_Masterthesis_Pan"><strong>Explore the docs »</strong></a>
     <br />
