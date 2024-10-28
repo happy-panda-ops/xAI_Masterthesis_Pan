@@ -44,15 +44,17 @@
   </a>
   </a>
 
-<h3 align="center">Master Thesis</h3>
+<h3 align="center">AI-assisted wood knots detection
+from historic timber structure
+imaging</h3>
 
   <p align="center">
-    project_description
+    This git repository contains the codes, training results and test code for Junquan Pan's master thesis at Chair xAI of the University of Bamberg.
     <br />
     <a href="https://github.com/happy-panda-ops/xAI_Masterthesis_Pan"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/happy-panda-ops/xAI_Masterthesis_Pan">View Demo</a>
+    <a href="https://github.com/happy-panda-ops/xAI_Masterthesis_Pan/tree/main/Test_code">View Demo</a>
     ·
     <a href="https://github.com/happy-panda-ops/xAI_Masterthesis_Pan/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
@@ -93,9 +95,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `Holms_Pan`, `repo_name`, `JunquanPan`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -103,8 +105,8 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
-
+* <a href="https://www.python.org/"><img src="https://www.python.org/static/community_logos/python-logo.png" alt="Python" width="100" height="30"/></a>
+* <a href="https://jupyter.org/"><img src="https://jupyter.org/assets/homepage/main-logo.svg" alt="Jupyter Notebook" width="100" height="30"/></a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -124,7 +126,7 @@ This is an example of how to list things you need to use the software and how to
   npm install npm@latest -g
   ```
 
-### Installation
+### Code Guide
 
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
@@ -141,7 +143,7 @@ This is an example of how to list things you need to use the software and how to
    ```
 5. Change git remote url to avoid accidental pushes to base project
    ```sh
-   git remote set-url origin github_username/repo_name
+   git remote set-url origin Holms_Pan/repo_name
    git remote -v # confirm the changes
    ```
 
@@ -161,7 +163,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 <!-- ROADMAP -->
-## Roadmap
+<!-- ## Roadmap
 
 - [ ] Feature 1
 - [ ] Feature 2
@@ -170,7 +172,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 See the [open issues](https://github.com/happy-panda-ops/xAI_Masterthesis_Pan/issues) for a full list of proposed features (and known issues).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 
 
@@ -190,11 +192,11 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Top contributors:
+<!-- ### Top contributors:
 
 <a href="https://github.com/happy-panda-ops/xAI_Masterthesis_Pan/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=github_username/repo_name" alt="contrib.rocks image" />
-</a>
+  <img src="https://contrib.rocks/image?repo=Holms_Pan/repo_name" alt="contrib.rocks image" />
+</a> -->
 
 
 
@@ -210,7 +212,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Your Name - [@JunquanPan](https://twitter.com/JunquanPan) - junqan_pan@163.com
 
 Project Link: [https://github.com/happy-panda-ops/xAI_Masterthesis_Pan](https://github.com/happy-panda-ops/xAI_Masterthesis_Pan)
 
@@ -231,15 +233,15 @@ Project Link: [https://github.com/happy-panda-ops/xAI_Masterthesis_Pan](https://
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/Holms_Pan/repo_name.svg?style=for-the-badge
 [contributors-url]: https://github.com/happy-panda-ops/xAI_Masterthesis_Pan/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/Holms_Pan/repo_name.svg?style=for-the-badge
 [forks-url]: https://github.com/happy-panda-ops/xAI_Masterthesis_Pan/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/Holms_Pan/repo_name.svg?style=for-the-badge
 [stars-url]: https://github.com/happy-panda-ops/xAI_Masterthesis_Pan/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/Holms_Pan/repo_name.svg?style=for-the-badge
 [issues-url]: https://github.com/happy-panda-ops/xAI_Masterthesis_Pan/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/Holms_Pan/repo_name.svg?style=for-the-badge
 [license-url]: https://github.com/happy-panda-ops/xAI_Masterthesis_Pan/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
