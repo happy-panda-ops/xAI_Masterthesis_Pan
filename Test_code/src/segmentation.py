@@ -4,69 +4,43 @@ import numpy as np
 import cv2
 from utils.image_os import ImageOS
 from utils.json_os import JsonOS
-from file_utils import generate_output_filename  # Import filename generator
+from file_utils import generate_output_filename
+from ultralytics import YOLO  # YOLOv8 library
 
 class ObjectSegmentation:
-    def __init__(self, seg_model, seg_input, seg_output):
+    def __init__(self, seg_model, seg_input, seg_output, model_type='detectron'):
         self.seg_model = seg_model
         self.seg_input = seg_input
         self.seg_output = seg_output
 
+        self.model_handler = self.YOLOHandler(seg_model)
+
+        # # Choose model handler based on type
+        # if model_type == 'detectron':
+        #     self.model_handler = self.Detectron2Handler(seg_model)
+        # elif model_type == 'yolo':
+        #     self.model_handler = self.YOLOHandler(seg_model)
+        # else:
+        #     raise ValueError("Unsupported model type. Choose 'detectron' or 'yolo'.")
+
     def get_segmentation(self):
-        """Get segmentation model predictions"""
+        """Get segmentation model predictions using the chosen handler"""
         seg_img = ImageOS.read_image(self.seg_input)
         if seg_img is None:
+            print(f"Error: Could not read image at {self.seg_input}")
             return None
 
-        # Load model weights and set threshold (example)
-        cfg.MODEL.WEIGHTS = '/Users/holmes/Desktop/test_10_0610_model_final.pth'  
-        cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.6
-        predictor = DefaultPredictor(cfg)
-        
-        predictions = predictor(seg_img)
-        return predictions
+        # Use the model handler to process the image and get results
+        result_dict, pred_polygons = self.model_handler.predict(seg_img)
 
-    @staticmethod
-    def binary_mask_to_polygons(binary_mask, tolerance=1):
-        """Convert binary mask to polygons"""
-        polygons = []
-        binary_mask = binary_mask.astype(np.uint8)
-        contours, _ = cv2.findContours(binary_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-        for contour in contours:
-            if len(contour) > 4:
-                contour = contour.flatten().tolist()
-                polygons.append([[contour[i], contour[i + 1]] for i in range(0, len(contour), 2)])
-        return polygons
+        return pred_polygons, result_dict
 
     def process_image(self):
         """Process image and extract segmentation results"""
-        predictions = self.get_segmentation()
-        if predictions is None:
+        pred_polygons, result_dict = self.get_segmentation()
+        if pred_polygons is None or result_dict is None:
+            print("Segmentation failed.")
             return
-
-        instances = predictions["instances"].to("cpu")
-        pred_classes = instances.pred_classes.tolist()
-        pred_boxes = instances.pred_boxes.tensor.tolist()
-        pred_scores = instances.scores.tolist()
-        
-        # Convert binary masks to polygons
-        pred_masks = instances.pred_masks.numpy()
-        pred_polygons = [self.binary_mask_to_polygons(mask) for mask in pred_masks]
-
-        detection_results = []
-        for cls, box, score, polygons in zip(pred_classes, pred_boxes, pred_scores, pred_polygons):
-            instance_result = {
-                "class": cls,
-                "box": box,
-                "score": score,
-                "mask": [{"polygon": polygon} for polygon in polygons]
-            }
-            detection_results.append(instance_result)
-
-        result_dict = {
-            "file_name": os.path.basename(self.seg_input),
-            "instances": detection_results
-        }
 
         # Generate filename without extension and save results
         new_filename = generate_output_filename(self.seg_input, '_seg')
@@ -90,12 +64,111 @@ class ObjectSegmentation:
         ImageOS.ensure_dir_exists(self.seg_output)
         self.process_image()
 
+    class Detectron2Handler:
+        """Handles all Detectron2-specific configuration, loading, and prediction tasks."""
+        
+        def __init__(self, model_path, threshold=0.6, device="cuda"):
+            self.model_path = model_path
+            self.threshold = threshold
+            self.device = device
+            self.cfg = self._load_config()
+            self.predictor = DefaultPredictor(self.cfg)
+
+        def _load_config(self):
+            """Load and configure Detectron2 settings"""
+            cfg = get_cfg()
+            cfg.merge_from_file("COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml")
+            cfg.MODEL.WEIGHTS = self.model_path
+            cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = self.threshold
+            cfg.MODEL.DEVICE = self.device
+            return cfg
+
+        def predict(self, image):
+            """Run model prediction and return formatted results"""
+            predictions = self.predictor(image)
+            instances = predictions["instances"].to("cpu")
+            
+            pred_classes = instances.pred_classes.tolist()
+            pred_boxes = instances.pred_boxes.tensor.tolist()
+            pred_scores = instances.scores.tolist()
+            
+            pred_masks = instances.pred_masks.numpy()
+            pred_polygons = [self.binary_mask_to_polygons(mask) for mask in pred_masks]
+
+            detection_results = []
+            for cls, box, score, polygons in zip(pred_classes, pred_boxes, pred_scores, pred_polygons):
+                instance_result = {
+                    "class": cls,
+                    "box": box,
+                    "score": score,
+                    "mask": [{"polygon": polygon} for polygon in polygons]
+                }
+                detection_results.append(instance_result)
+
+            result_dict = {
+                "file_name": os.path.basename(image),
+                "instances": detection_results
+            }
+
+            return result_dict, pred_polygons
+
+        @staticmethod
+        def binary_mask_to_polygons(binary_mask, tolerance=1):
+            """Convert binary mask to polygons"""
+            polygons = []
+            binary_mask = binary_mask.astype(np.uint8)
+            contours, _ = cv2.findContours(binary_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+            for contour in contours:
+                if len(contour) > 4:
+                    contour = contour.flatten().tolist()
+                    polygons.append([[contour[i], contour[i + 1]] for i in range(0, len(contour), 2)])
+            return polygons
+    class YOLOHandler:
+        """Handles all YOLO-specific configuration, loading, and prediction tasks."""
+        
+        def __init__(self, model_path, confidence_threshold=0.6):
+            self.model = YOLO(model_path)  # Load YOLO model from specified path
+            self.confidence_threshold = confidence_threshold
+
+        def predict(self, image):
+            """Run YOLO model prediction and return formatted results"""
+            results = self.model.predict(image)
+            detections = results[0]
+
+            # Process detections
+            detection_results = []
+            pred_polygons = []
+            for detection in detections.boxes:
+                score = detection.conf.item()
+                if score >= self.confidence_threshold:
+                    cls = int(detection.cls.item())
+                    box = detection.xyxy.cpu().numpy().tolist()[0]  # Bounding box as [x1, y1, x2, y2]
+
+                    # YOLO does not provide mask-based segmentation, so boxes are used as polygons here
+                    polygons = [[box[:2], [box[0], box[3]], box[2:], [box[2], box[1]]]]
+                    pred_polygons.append(polygons)
+
+                    instance_result = {
+                        "class": cls,
+                        "box": box,
+                        "score": score,
+                        "mask": [{"polygon": poly} for poly in polygons]
+                    }
+                    detection_results.append(instance_result)
+
+            result_dict = {
+                "file_name": os.path.basename(image),
+                "instances": detection_results
+            }
+
+            return result_dict, pred_polygons
+
 # Main function call
 if __name__ == "__main__":
-    seg_model_path = "path/to/your/segmentation_model"
+    seg_model_path = "path/to/your/yolo_model.pt"  # Change to the path of your YOLO model
     seg_input_image = "path/to/your/seg_input_image"
     seg_output_folder = "path/to/output/folder"
 
-    # Initialize and run segmentation class
-    segmenter = ObjectSegmentation(seg_model_path, seg_input_image, seg_output_folder)
+    # Initialize and run segmentation with YOLO
+    segmenter = ObjectSegmentation(seg_model_path, seg_input_image, seg_output_folder, model_type='yolo')
     segmenter.run()
