@@ -4,7 +4,7 @@ import numpy as np
 import cv2
 from utils.image_os import ImageOS
 from utils.json_os import JsonOS
-from file_utils import generate_output_filename
+from utils.file_os import generate_output_filename
 from ultralytics import YOLO  # YOLOv8 library
 
 class ObjectSegmentation:
@@ -31,7 +31,7 @@ class ObjectSegmentation:
             return None
 
         # Use the model handler to process the image and get results
-        result_dict, pred_polygons = self.model_handler.predict(seg_img)
+        result_dict, pred_polygons = self.model_handler.predict(seg_img, self.seg_input)
 
         return pred_polygons, result_dict
 
@@ -54,7 +54,7 @@ class ObjectSegmentation:
         # Create polygon overlay on transparent background
         img = ImageOS.read_image(self.seg_input)
         img_size = img.shape[:2]  # Get image dimensions (height, width)
-        transparent_img = ImageOS.draw_polygon_on_transparent_background(img_size, polygons)
+        transparent_img = ImageOS.draw_polygon(img_size, polygons)
 
         # Save transparent PNG image
         ImageOS.save_image_as_png(os.path.join(self.seg_output, new_filename), transparent_img)
@@ -127,10 +127,10 @@ class ObjectSegmentation:
         """Handles all YOLO-specific configuration, loading, and prediction tasks."""
         
         def __init__(self, model_path, confidence_threshold=0.6):
-            self.model = YOLO(model_path)  # Load YOLO model from specified path
+            self.model = YOLO(model_path).to('cpu')  # Load YOLO model from specified path
             self.confidence_threshold = confidence_threshold
 
-        def predict(self, image):
+        def predict(self, image, image_path):
             """Run YOLO model prediction and return formatted results"""
             results = self.model.predict(image)
             detections = results[0]
@@ -157,17 +157,19 @@ class ObjectSegmentation:
                     detection_results.append(instance_result)
 
             result_dict = {
-                "file_name": os.path.basename(image),
+                "file_name": os.path.basename(image_path),  # Use image_path here
                 "instances": detection_results
             }
-
+            
+            print(results)
+            
             return result_dict, pred_polygons
 
 # Main function call
 if __name__ == "__main__":
-    seg_model_path = "path/to/your/yolo_model.pt"  # Change to the path of your YOLO model
-    seg_input_image = "path/to/your/seg_input_image"
-    seg_output_folder = "path/to/output/folder"
+    seg_model_path = r"C:\Users\ba7jd2\Work Folders\Documents\Projects\WoodFeature\xAI_Masterthesis_Pan\Test_code\src\models\seg\YOLO-seg-test-3best.pt"
+    seg_input_image = r"C:\Users\ba7jd2\Work Folders\Documents\Projects\WoodFeature\xAI_Masterthesis_Pan\Test_code\example\demo_tests\1_seg\Model_2_0004.jpeg"
+    seg_output_folder = r"C:\Users\ba7jd2\Work Folders\Documents\Projects\WoodFeature\xAI_Masterthesis_Pan\Test_code\example\demo_tests\1_seg"
 
     # Initialize and run segmentation with YOLO
     segmenter = ObjectSegmentation(seg_model_path, seg_input_image, seg_output_folder, model_type='yolo')
