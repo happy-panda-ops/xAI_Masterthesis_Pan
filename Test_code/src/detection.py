@@ -7,11 +7,20 @@ from utils.json_os import JsonOS
 from utils.file_os import generate_output_filename  # Import filename generator
 
 class ObjectDetection:
-    def __init__(self, det_model_path, det_input, det_output):
+    def __init__(self, det_model_path, det_input, det_output, model_type='yolo'):
         self.det_model_path = det_model_path
         self.det_input = det_input
         self.det_output = det_output
+        
         self.model = self.load_model()
+        
+        # Choose model handler based on type
+        if model_type == 'detectron':
+            self.model_handler = self.Detectron2Handler(seg_model)
+        elif model_type == 'yolo':
+            self.model_handler = self.YOLOHandler(seg_model)
+        else:
+            raise ValueError("Unsupported model type. Choose 'detectron' or 'yolo'.")
         
         # Ensure output directory exists
         ImageOS.ensure_dir_exists(self.det_output)

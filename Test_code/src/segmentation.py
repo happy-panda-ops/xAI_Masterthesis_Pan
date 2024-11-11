@@ -9,7 +9,7 @@ from ultralytics import YOLO  # YOLOv8 library
 import random
 
 class ObjectSegmentation:
-    def __init__(self, seg_model, seg_input, seg_output, model_type='detectron'):
+    def __init__(self, seg_model, seg_input, seg_output, model_type='yolo'):
         self.seg_model = seg_model
         self.seg_input = seg_input
         self.seg_output = seg_output
@@ -21,6 +21,10 @@ class ObjectSegmentation:
             self.model_handler = self.YOLOHandler(seg_model)
         else:
             raise ValueError("Unsupported model type. Choose 'detectron' or 'yolo'.")
+        
+        # Ensure output directory exists
+        ImageOS.ensure_dir_exists(self.seg_output)
+
 
     def get_segmentation(self):
         """Get segmentation model predictions using the chosen handler"""
@@ -118,6 +122,7 @@ class ObjectSegmentation:
                     contour = contour.flatten().tolist()
                     polygons.append([[contour[i], contour[i + 1]] for i in range(0, len(contour), 2)])
             return polygons
+    
     class YOLOHandler:
         """Handles all YOLO-specific configuration, loading, and prediction tasks."""
         
