@@ -20,14 +20,10 @@ class ObjectSegmentation:
         elif model_type == 'yolo':
             self.model_handler = self.YOLOHandler(seg_model)
         else:
-            raise ValueError("Unsupported model type. Choose 'detectron' or 'yolo'.")
-        
-        # Ensure output directory exists
-        ImageOS.ensure_dir_exists(self.seg_output)
-
+            raise ValueError("Unsupported model type.")
 
     def get_segmentation(self):
-        """Get segmentation model predictions using the chosen handler"""
+        """Get segmentation predictions using the chosen handler"""
         seg_img = ImageOS.read_image(self.seg_input)
         if seg_img is None:
             print(f"Error: Could not read image at {self.seg_input}")
