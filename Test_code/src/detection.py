@@ -100,9 +100,9 @@ class ObjectDetection:
 
 # Main function call
 if __name__ == "__main__":
-    det_model_path = r"C:\Users\ba7jd2\Work Folders\Documents\Projects\WoodFeature\xAI_Masterthesis_Pan\Test_code\src\models\detec\Mixed_YOLO_d1+d2+s1_test_1-best.pt"
-    det_input = r"C:\Users\ba7jd2\Work Folders\Documents\Projects\WoodFeature\xAI_Masterthesis_Pan\Test_code\example\demo_tests\2_tran\M1_0025_tran_transformed.png"
-    det_output = r"C:\Users\ba7jd2\Work Folders\Desktop\test"
+    det_model_path = r"/Users/holmes/Documents/UNI-Bamberg/4.Semester_MA/Masterthesis/xAI_Masterthesis_Pan/Test_code/src/models/detec/Mixed_YOLO_d1+d2+s1_test_1-best.pt"
+    det_input = r"/Users/holmes/Documents/UNI-Bamberg/4.Semester_MA/Masterthesis/xAI_Masterthesis_Pan/Test_code/example/demo_tests/2_tran/M1_0025_tran_transformed.png"
+    det_output = r"/Users/holmes/Documents/UNI-Bamberg/4.Semester_MA/Masterthesis/xAI_Masterthesis_Pan/Test_code/example/demo_tests/3_det"
 
     # Initialize and run detection class
     detector = ObjectDetection(det_model_path, det_input, det_output)

@@ -1,0 +1,27 @@
+{
+    "instances": [
+        {
+            "class_id": 1,
+            "class_name": "wood_knot",
+            "confidence": 0.8866572976112366,
+            "box": [
+                1631,
+                3065,
+                2014,
+                3423
+            ]
+        },
+        {
+            "class_id": 1,
+            "class_name": "wood_knot",
+            "confidence": 0.5954349040985107,
+            "box": [
+                701,
+                2612,
+                857,
+                2812
+            ]
+        }
+    ],
+    "file_name": "M1_0025_tran_transformed.png"
+}

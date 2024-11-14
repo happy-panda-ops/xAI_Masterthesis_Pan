@@ -1,0 +1,1 @@
+image captured restore in the output folder with individual subfolder

@@ -180,9 +180,9 @@ class ObjectSegmentation:
 
 # Main function call
 if __name__ == "__main__":
-    seg_model_path = r"C:\Users\ba7jd2\Work Folders\Documents\Projects\WoodFeature\xAI_Masterthesis_Pan\Test_code\src\models\seg\YOLO-seg-test-3best.pt"
-    seg_input_image = r"C:\Users\ba7jd2\Work Folders\Documents\Projects\WoodFeature\xAI_Masterthesis_Pan\Test_code\example\demo_tests\1_seg\M1_0025.jpeg"
-    seg_output_folder = r"C:\Users\ba7jd2\Work Folders\Desktop\test"
+    seg_model_path = r"/Users/holmes/Documents/UNI-Bamberg/4.Semester_MA/Masterthesis/xAI_Masterthesis_Pan/Test_code/src/models/seg/YOLO-seg-test-3best.pt"
+    seg_input_image = r"/Users/holmes/Documents/UNI-Bamberg/4.Semester_MA/Masterthesis/xAI_Masterthesis_Pan/Test_code/example/demo_tests/1_seg/Model_2_0004.jpeg"
+    seg_output_folder = r"/Users/holmes/Documents/UNI-Bamberg/4.Semester_MA/Masterthesis/xAI_Masterthesis_Pan/Test_code/example/demo_tests/1_seg"
 
     # Initialize and run segmentation with YOLO
     segmenter = ObjectSegmentation(seg_model_path, seg_input_image, seg_output_folder, model_type='yolo')
