@@ -97,7 +97,28 @@ imaging</h3>
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `Holms_Pan`, `repo_name`, `JunquanPan`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+<!-- Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `Holms_Pan`, `repo_name`, `JunquanPan`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description` -->
+
+<!-- # Automated Wood Knot Detection for Historic Timber Structures -->
+
+This project focuses on developing an **AI-powered system** for detecting wood knots on historic timber surfaces, contributing to the preservation and sustainability of invaluable heritage structures. Traditional manual methods for assessing timber integrity are often time-consuming, error-prone, and limited in challenging conditions. This project introduces a modern, automated solution leveraging **machine learning** and **deep learning** techniques.
+
+## Key Features
+1. **Two-Stage Detection Process:**
+   - **Stage 1:** Timber surface segmentation using models like [Detectron2](https://github.com/facebookresearch/detectron2).
+   - **Stage 2:** Knot detection with [YOLOv8](https://github.com/ultralytics/yolov8).
+2. **Geometric Analysis:** Realistic measurements from mobile phone sensors are integrated to estimate knot dimensions.
+3. **Dataset Integration:** Tests conducted on both labeled datasets and unseen collections ensure the system's reliability and adaptability.
+
+## Goals
+- **Accurate Documentation:** Provide detailed analysis of timber surfaces to assist heritage conservation.
+- **Efficiency:** Reduce time and errors associated with traditional methods.
+- **Accessibility:** Implement a mobile application for conservators to streamline inspection and analysis.
+
+## Future Enhancements
+Ongoing research aims to refine model accuracy and stability for diverse environmental conditions, ensuring a robust and reliable tool for the conservation community.
+
+---
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -112,11 +133,12 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 
 
-<!-- GETTING STARTED -->
+<!-- GETTING STARTED
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+The Train_code folder contains the training code and some of the training results based on detectron2 and YOLOv8.
+
+The folder Test_code contains the compiled code for automatic detection of wood knots. The models used are currently set by default. More information about the required environment, packages and setup can be found in the "README" file in the corresponding folder. 
 
 ### Prerequisites
 
@@ -148,7 +170,7 @@ This is an example of how to list things you need to use the software and how to
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+ -->
 
 
 <!-- USAGE EXAMPLES -->
@@ -220,12 +242,12 @@ Project Link: [https://github.com/happy-panda-ops/xAI_Masterthesis_Pan](https://
 
 
 
-<!-- ACKNOWLEDGMENTS -->
+<!-- ACKNOWLEDGMENTS
 ## Acknowledgments
 
 * []()
 * []()
-* []()
+* []() -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
